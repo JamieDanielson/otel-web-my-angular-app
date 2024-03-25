@@ -4,20 +4,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Instrumenting for Honeycomb
 
-### NOTE instrumentations package needs an update before it is usable with Angular
-
 ### Install Packages
 
-<!--
 ```sh
 npm install --save \
 @honeycombio/opentelemetry-web \
 @opentelemetry/auto-instrumentations-web
-```
- -->
-
-```sh
-npm install --save @honeycombio/opentelemetry-web
 ```
 
 ### Get a Honeycomb API Key
@@ -36,7 +28,7 @@ export function sdk() {
   const sdk = new HoneycombWebSDK({
     apiKey: 'YOUR_KEY_HERE',
     serviceName: 'my-angular-app',
-    // instrumentations: [getWebAutoInstrumentations()], // add auto-instrumentation
+    instrumentations: [getWebAutoInstrumentations()], // add auto-instrumentation
   });
   sdk.start();
 };
